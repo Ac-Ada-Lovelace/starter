@@ -6,17 +6,17 @@ local function show_keymap_hints()
     local buf = vim.api.nvim_create_buf(false, true)
     local keymap_hints = {
         "Keymap Hints:",
-        "<F2>  - Breakpoint Condition",
-        "<F3>  - Toggle Breakpoint",
-        "<F4>  - Run/Continue",
-        "<F5>  - Run with Args",
-        "<F6>  - Run to Cursor",
-        "<S-F6> - Go to Line (No Execute)",
-        "<F7>  - Step Into",
-        "<F8>  - Step Out",
-        "<S-F8> - Step Over",
-        "<F9>  - Run Last",
-        "<F10> - Pause",
+        "<F3>   - Breakpoint Condition",
+        "<S-F3>   - Toggle Breakpoint",
+        "<F4>   - Run/Continue",
+        "<F5>   - Run with Args",
+        "<F6> - Go to Line (No Execute)",
+        "<S-F6>   - Run to Cursor",
+        "<F7>   - Step Into",
+        "<F8> - Step Over",
+        "<S-F8>   - Step Out",
+        "<F9>   - Run Last",
+        "<F10>  - Pause",
     }
     vim.api.nvim_buf_set_lines(buf, 0, -1, false, keymap_hints)
     local width = 40
