@@ -6,8 +6,8 @@ local function show_keymap_hints()
     local buf = vim.api.nvim_create_buf(false, true)
     local keymap_hints = {
         "Keymap Hints:",
-        "<F3>   - Breakpoint Condition",
-        "<S-F3>   - Toggle Breakpoint",
+        "<F3>   - Toggle Breakpoint",
+        "<S-F3>   - Breakpoint Condition",
         "<F4>   - Run/Continue",
         "<F5>   - Run with Args",
         "<F6> - Go to Line (No Execute)",
@@ -44,6 +44,5 @@ end
 
 -- Command to show keymap hints
 vim.api.nvim_create_user_command("Dbh", show_keymap_hints, {})
-
 -- Keymap to trigger the command
 set_keymap("n", "<leader>dh", ":Dbh<CR>", "Show DAP Keymap Hints")

@@ -21,3 +21,14 @@ set_keymap("n", "<S-F8>", "<cmd>lua require('dap').step_out()<CR>", "Step Out")
 set_keymap("n", "<F9>", "<cmd>lua require('dap').run_last()<CR>", "Run Last")
 set_keymap("n", "<F10>", "<cmd>lua require('dap').pause()<CR>", "Pause")
 require("config.debug-hint")
+
+-- Make 'jk' act like 'esc' in any mode
+vim.api.nvim_set_keymap("i", "jk", "<ESC>", { noremap = true, silent = true })
+
+-- make g9 to act as native ctrl-o, g0 to act as native ctrl-i, gl to call jump list
+set_keymap("n", "g9", "<C-o>", "Go to older position")
+set_keymap("n", "g0", "<C-i>", "Go to newer position")
+set_keymap("n", "gl", ":jumps<CR>", "Jump list")
+
+-- suppress native action for space in normal mode
+vim.api.nvim_set_keymap("n", "<Space>", "<Nop>", { noremap = true, silent = true })
